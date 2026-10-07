@@ -1,0 +1,24 @@
+{
+  "title": "Sample: Biology 101",
+  "modules": [
+    {
+      "title": "Organelles",
+      "questions": [
+        { "question": "Which organelle produces most of a cell's ATP?", "answer": "Mitochondrion",
+          "choices": ["Mitochondrion", "Golgi apparatus", "Lysosome", "Ribosome"],
+          "explanation": "Oxidative phosphorylation happens on the inner mitochondrial membrane." },
+        { "question": "What separates the cell's interior from its surroundings?", "answer": "Plasma membrane",
+          "explanation": "A phospholipid bilayer with embedded proteins." }
+      ]
+    },
+    {
+      "title": "Protein synthesis",
+      "questions": [
+        { "question": "What is the function of ribosomes?", "answer": "Protein synthesis",
+          "explanation": "They translate mRNA into polypeptide chains." },
+        { "question": "Which molecule carries amino acids to the ribosome?", "answer": "tRNA",
+          "choices": ["mRNA", "tRNA", "rRNA", "DNA"] }
+      ]
+    }
+  ]
+}

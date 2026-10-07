@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Deck</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="layout" id="drop">
+      <aside>
+        <h1>Quiz Deck</h1>
+        <button class="btn" id="new-subject" type="button">
+          Create a subject
+        </button>
+        <label class="btn primary" for="file">Import extra questions</label>
+        <input id="file" type="file" accept=".json,.csv" multiple hidden />
+        <p class="hint">Or drop .json / .csv files anywhere.</p>
+        <ul id="sets"></ul>
+      </aside>
+      <main id="view"></main>
+    </div>
+    <script src="data/questions.js"></script>
+    <script src="data/cs0053.js"></script>
+    <script src="data/cs0011.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

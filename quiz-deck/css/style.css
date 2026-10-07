@@ -1,0 +1,74 @@
+:root {
+  --ink: #14292e; --ink-2: #1f3a40; --page: #e8edeb; --card: #fbfcfb;
+  --line: #c7d1ce; --mark: #e0a526; --ok: #2f7d5b; --bad: #b5412f; --muted: #5d6f6c;
+  --serif: Charter, "Iowan Old Style", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { font-family: var(--sans); background: var(--page); color: var(--ink); line-height: 1.5; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100%; }
+aside { background: var(--ink); color: #e8edeb; padding: 1.5rem 1.25rem; }
+aside h1 { font: 700 1.4rem var(--serif); margin: 0 0 1.25rem; }
+.hint { font-size: .8rem; color: #9fb1ae; margin: .6rem 0 1.5rem; }
+#sets { list-style: none; margin: 0; padding: 0; }
+#sets li { display: flex; border-radius: 6px; }
+#sets li.on { background: var(--ink-2); box-shadow: inset 3px 0 var(--mark); }
+#sets li button { background: none; border: 0; cursor: pointer; text-align: left; padding: .6rem .75rem; color: inherit; }
+#sets li > button:first-child { flex: 1; }
+#sets small { display: block; color: #9fb1ae; font-size: .78rem; }
+#sets .x { font-size: 1.2rem; color: #9fb1ae; }
+#sets .x:hover { color: #fff; }
+
+main { padding: 2.5rem clamp(1rem, 5vw, 4rem); }
+.empty { max-width: 34rem; margin: 10vh auto 0; }
+.empty h2 { font: 700 2rem var(--serif); margin: 0 0 .5rem; }
+.empty p { color: var(--muted); }
+code { background: #d6dedb; padding: .1em .4em; border-radius: 4px; }
+
+.card { max-width: 42rem; margin: 4vh auto 0; background: var(--card); border: 1px solid var(--line);
+  border-top: 6px solid var(--mark); border-radius: 4px; padding: 1.5rem clamp(1rem, 4vw, 2.5rem) 2rem; }
+.meta { display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; }
+.q { font: 600 1.55rem/1.35 var(--serif); margin: 1.25rem 0 1.5rem; }
+.answer { font: 600 1.25rem var(--serif); padding: 1rem 0; border-top: 1px solid var(--line); }
+.why { color: var(--muted); }
+.verdict { font-weight: 600; margin: 1.25rem 0 .25rem; }
+.verdict.ok { color: var(--ok); } .verdict.bad { color: var(--bad); }
+
+.row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.25rem; }
+.btn { display: inline-block; border: 1px solid var(--ink); background: transparent; border-radius: 6px;
+  padding: .6rem 1.1rem; cursor: pointer; font-weight: 600; }
+.btn:hover { background: #dfe6e3; }
+.btn.primary { background: var(--mark); border-color: var(--mark); color: var(--ink); }
+.btn.primary:hover { filter: brightness(.95); }
+aside .btn { display: block; text-align: center; border-color: var(--mark); }
+aside #new-subject { width: 100%; margin-bottom: .6rem; color: #e8edeb; cursor: pointer; }
+.link { background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; color: inherit; }
+
+.choices { display: grid; gap: .6rem; }
+.choice { text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 6px; padding: .75rem 1rem; cursor: pointer; }
+.choice:hover:not(:disabled) { border-color: var(--ink); }
+.choice:disabled { cursor: default; }
+.choice.right { border-color: var(--ok); background: #e3f1ea; }
+.choice.wrong { border-color: var(--bad); background: #f6e4e0; }
+input#typed { flex: 1; min-width: 12rem; padding: .6rem .8rem; border: 1.5px solid var(--line); border-radius: 6px; background: #fff; }
+.editor-actions { margin-top: 1.5rem; }
+.editor-form { display: grid; gap: .9rem; margin-top: 1rem; padding: 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.editor-form label { display: grid; gap: .3rem; font-weight: 600; }
+.editor-form input, .editor-form textarea { width: 100%; padding: .6rem .75rem; border: 1.5px solid var(--line); border-radius: 6px; background: #fff; resize: vertical; }
+.editor-form .row { margin-top: .25rem; }
+.form-error { color: var(--bad) !important; margin: 0; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  aside { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.chip { border: 1.5px solid var(--line); background: #fff; border-radius: 999px; padding: .3rem .9rem; cursor: pointer; }
+.chip:hover { border-color: var(--ink); }
+.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
